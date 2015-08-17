@@ -23,10 +23,10 @@
 	
 	#Отправка письма на указанную почту (во временную папку писем на сервере "..\tmp\!sendmail")
 	if (isset($_POST[Send])) {
-		$result = mail("$_POST[login]", "Авторизация пользователя", "Для прохожденя авторизации пройдите по ссылке http://".$_SERVER['HTTP_HOST'].$path."/get_file.php?hash=".$hash."");
+		$result = mail("$_POST[login]", "Авторизация пользователя", "Для прохожденя авторизации пройдите по ссылке http://".$_SERVER['HTTP_HOST'].$path."/link.php?hash=".$hash."");
 		if ($result) {
 			echo "<p>Сообщение отправлено!</p>";
-			echo "<p>Одноразовая ссылка: <a href='http://".$_SERVER['HTTP_HOST'].$path."/get_file.php?hash=".$hash."'>http://".$_SERVER['HTTP_HOST'].$path."/get_file.php?hash=".$hash."</a></p>";
+			echo "<p>Одноразовая ссылка: <a href='http://".$_SERVER['HTTP_HOST'].$path."/link.php?hash=".$hash."'>http://".$_SERVER['HTTP_HOST'].$path."/link.php?hash=".$hash."</a></p>";
 			exit();
 		}
 		else {
